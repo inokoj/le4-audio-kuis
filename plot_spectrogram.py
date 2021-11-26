@@ -80,7 +80,7 @@ plt.xlabel('sample')					# x軸のラベルを設定
 plt.ylabel('frequency [Hz]')		# y軸のラベルを設定
 plt.imshow(
 	np.flipud(np.array(spectrogram).T),		# 画像とみなすために，データを転置して上下反転
-	extent=[0, len(x), 0, 500],			# (横軸の原点の値，横軸の最大値，縦軸の原点の値，縦軸の最大値)
+	extent=[0, len(x), 0, SR/2],			# (横軸の原点の値，横軸の最大値，縦軸の原点の値，縦軸の最大値)
 	aspect='auto',
 	interpolation='nearest'
 )
