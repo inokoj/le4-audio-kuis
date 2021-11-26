@@ -61,11 +61,8 @@ for i in np.arange(0, len(x)-size_frame, size_shift):
 	# 複素スペクトログラムを対数振幅スペクトログラムに
 	fft_log_abs_spec = np.log(np.abs(fft_spec))
 
-	size_target = int(len(fft_log_abs_spec) * (500 / 8000))
-	fft_log_abs_spec_short = fft_log_abs_spec[:size_target]
-
 	# 計算した対数振幅スペクトログラムを配列に保存
-	spectrogram.append(fft_log_abs_spec_short)
+	spectrogram.append(fft_log_abs_spec)
 
 
 #
