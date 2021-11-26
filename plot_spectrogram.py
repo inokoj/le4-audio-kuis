@@ -21,7 +21,7 @@ x, _ = librosa.load('aiueo.wav', sr=SR)
 #
 
 # フレームサイズ
-size_frame = 4096			# 2のべき乗
+size_frame = 512			# 2のべき乗
 
 # フレームサイズに合わせてハミング窓を作成
 hamming_window = np.hamming(size_frame)
