@@ -20,7 +20,7 @@ x, _ = librosa.load('a.wav', sr=SR)
 # np.fft.rfftを使用するとFFTの前半部分のみが得られる
 fft_spec = np.fft.rfft(x)
 
-# 複素スペクトログラムを対数振幅スペクトログラムに
+# 複素スペクトルを対数振幅スペクトルに
 fft_log_abs_spec = np.log(np.abs(fft_spec))
 
 #
