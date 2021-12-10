@@ -80,7 +80,7 @@ def _draw_spectrum(v):
 
 	# 直前のスペクトル描画を削除し，新たなスペクトルを描画
 	plt.cla()
-	x_data = np.linspace(0, SR/2, len(spectrum))
+	x_data = np.fft.rfftfreq(size_frame, d=1/SR)
 	ax2.plot(x_data, spectrum)
 	ax2.set_ylim(-10, 5)
 	ax2.set_xlim(0, SR/2)

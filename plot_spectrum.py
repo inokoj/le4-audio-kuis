@@ -35,7 +35,8 @@ plt.xlabel('frequency [Hz]')		# x軸のラベルを設定
 plt.ylabel('amplitude')				# y軸のラベルを設定
 plt.xlim([0, SR/2])					# x軸の範囲を設定
 # x軸のデータを生成（元々のデータが0~8000Hzに対応するようにする）
-x_data = np.linspace((SR/2)/len(fft_log_abs_spec), SR/2, len(fft_log_abs_spec))
+#x_data = np.linspace((SR/2)/len(fft_log_abs_spec), SR/2, len(fft_log_abs_spec))
+x_data = np.fft.rfftfreq(len(x), d=1/SR)
 plt.plot(x_data, fft_log_abs_spec)			# 描画
 # 【補足】
 # 縦軸の最大値はサンプリング周波数の半分 = 16000 / 2 = 8000 Hz となる
