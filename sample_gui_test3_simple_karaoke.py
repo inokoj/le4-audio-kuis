@@ -349,12 +349,10 @@ now_playing_sec = 0.0
 # 音楽を再生するパートを関数化したので，それを別スレッドで（GUIのため）再生開始
 t_play_music = threading.Thread(target=play_music)
 t_play_music.setDaemon(True)	# GUIが消されたときにこの別スレッドの処理も終了されるようにするため
-t_play_music.start()
 
 # 再生時間の表示を随時更新する関数を別スレッドで開始
 t_update_gui = threading.Thread(target=update_gui_text)
 t_update_gui.setDaemon(True)	# GUIが消されたときにこの別スレッドの処理も終了されるようにするため
-t_update_gui.start()
 
 #
 # (4) 全体の処理を実行
@@ -362,6 +360,10 @@ t_update_gui.start()
 
 # GUIの開始フラグをTrueに
 is_gui_running = True
+
+# 上記で設定したスレッドを開始（直前のフラグを立ててから）
+t_play_music.start()
+t_update_gui.start()
 
 # GUIを開始，GUIが表示されている間は処理はここでストップ
 tkinter.mainloop()
