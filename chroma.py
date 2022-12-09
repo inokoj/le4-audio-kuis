@@ -33,6 +33,6 @@ def chroma_vector(spectrum, frequencies):
 	# クロマベクトルの対応する要素に振幅スペクトルを足しこむ
 	for s, f in zip (spectrum , frequencies):
 		nn = hz2nn(f)
-		cv[nn % 12] += math.abs(s)
+		cv[nn % 12] += abs(s)
 	
 	return cv
