@@ -26,7 +26,7 @@ x, _ = librosa.load('a.wav', sr=SR)
 autocorr = np.correlate(x, x, 'full')
 
 # 不要な前半を捨てる
-autocorr = autocorr [len (autocorr ) / 2 : ]
+autocorr = autocorr [len (autocorr ) // 2 : ]
 
 # ピークのインデックスを抽出する
 peakindices = [i for i in range (len (autocorr )) if is_peak (autocorr, i)]
